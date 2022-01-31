@@ -1,7 +1,8 @@
-import '../styles/globals.css'
-
+import { storeWrapper } from "../redux/store";
+import Modal from 'react-modal';
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
-}
+};
 
-export default MyApp
+Modal.setAppElement("#__next");
+export default storeWrapper.withRedux(MyApp);
